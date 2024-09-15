@@ -81,8 +81,9 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # aliases
-alias l=ls -la
-alias la=ls -la
+alias ls=exa
+alias l="ls -la"
+alias la="ls -la"
 alias cls=clear
 alias cd=z
 
