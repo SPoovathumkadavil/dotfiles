@@ -1,7 +1,7 @@
 
-cmd + ctrl - return: open -na /Applications/Alacritty.app
-cmd + ctrl - s: /Applications/Alacritty.app/Contents/MacOS/alacritty -e zsh -c "/Users/sally/dev/.bin/spt"
-cmd + ctrl - a: open -a /Applications/Arc.app
-cmd + ctrl - c: code
-cmd + ctrl - escape: /Applications/Alacritty.app/Contents/MacOS/alacritty -e zsh -c "btop" 
+ctrl - return: open -na /Applications/Alacritty.app
+ctrl - s: /Applications/Alacritty.app/Contents/MacOS/alacritty -e zsh -c "/Users/sally/dev/.bin/spt"
+ctrl - a: open -a /Applications/Arc.app
+ctrl + shift - c: code
+ctrl - escape: /Applications/Alacritty.app/Contents/MacOS/alacritty -e zsh -c "btop" 
 
