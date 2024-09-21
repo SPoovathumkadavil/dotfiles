@@ -65,6 +65,7 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # aliases
+alias ls="exa"
 alias l="ls -la"
 alias la="ls -la"
 alias cls=clear
@@ -74,11 +75,11 @@ export EDITOR="nvim"
 
 # path exports
 export PATH="$PATH:/Users/sally/.local/bin"
-export PATH="$PATH:/Users/sally/dev/.bin"
-export PATH="$PATH:/Users/sally/dev/.scripts"
+export PATH="$PATH:/Users/sally/.local/scripts"
 export PATH="$PATH:/Users/sally/.cargo/bin"
+export PATH="$PATH:/Users/sally/.spicetify"
 
-export CMAKE_PREFIX_PATH="/Users/sally/dev/.library/libs:$CMAKE_PREFIX_PATH"
+export CMAKE_PREFIX_PATH="/Users/sally/.local/library/cmakelibs:$CMAKE_PREFIX_PATH"
 
 # always load tmux
 if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
@@ -88,3 +89,5 @@ fi
 # shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+
+export PATH=$PATH:/Users/sally/.spicetify
