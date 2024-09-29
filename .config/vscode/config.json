@@ -1,0 +1,176 @@
+{
+  // vscode meta stuff
+  "workbench.startupEditor": "none",
+  "editor.accessibilitySupport": "off",
+  // WPILIB defaults
+  "java.jdt.ls.java.home": "/Users/sally/wpilib/2024/jdk",
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": false,
+  "extensions.ignoreRecommendations": true,
+  "update.mode": "none",
+  "update.showReleaseNotes": false,
+  "java.completion.matchCase": "off",
+  "terminal.integrated.env.osx": {
+    "JAVA_HOME": "/Users/sally/wpilib/2024/jdk",
+    "PATH": "/Users/sally/wpilib/2024/jdk/bin:${env:PATH}"
+  },
+  "animations.Install-Method": "Apc Customize UI++",
+  // general
+  "workbench.sideBar.location": "right",
+  "animations.Install-Method": "Apc Customize UI++",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.42857, // makes font size 14 have line height of ~20px
+  "window.title": "${dirty}${rootName}${separator}${activeEditorShort}",
+  "editor.glyphMargin": false,
+  "editor.formatOnSave": false,
+  "editor.guides.indentation": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.renderLineHighlight": "none",
+  "search.searchOnType": false,
+  "scm.diffDecorationsGutterAction": "none",
+  // text editing stuff
+  "editor.linkedEditing": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.lineNumbers": "on",
+  // ui - minimap
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 120,
+  "editor.minimap.showSlider": "mouseover",
+  "editor.minimap.size": "fit",
+  "editor.minimap.scale": 1,
+  "editor.minimap.side": "right",
+  "editor.minimap.renderCharacters": false,
+  "editor.hideCursorInOverviewRuler": true, // don't highlight current line in scrollbar
+  "editor.minimap.autohide": true, // shows minimap only on hover
+  // ui - scrollbars
+  "editor.scrollbar.vertical": "auto",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  // ui - general
+  // "window.titleBarStyle": "custom",
+  "window.customTitleBarVisibility": "auto",
+  // "window.commandCenter": false,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": "none",
+  "workbench.layoutControl.enabled": false,
+  // "workbench.editor.editorActionsLocation": "hidden",
+  "editor.stickyScroll.enabled": true, // keep block name fixed at top when scrolling
+  "gitlens.mode.active": "zen", // toggle with command palette, zen mode hides gitlens stuff for when you don't need it
+  "editor.wordWrap": "on", // wrap text instead of scrolling horizontally
+  // apc - animations
+  "apc.imports": [
+    "file://${userHome}/wpilib/2024/vscode/code-portable-data/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+  ],
+  // apc - general
+  "apc.electron": {
+    "opacity": 0.95,
+    "transparent": true,
+    "backgroundColor": "#00000000",
+    "vibrancy": "ultra-dark",
+    "titleBarStyle": "customButtonsOnHover",
+    "visualEffectState": "active",
+    "frame": false
+  },
+  "apc.stylesheet": {
+    // ".monaco-editor .cursor": "background: #ffffffaa !important; box-shadow: 0 0 70px 5px #ffffff, #ffffff 0px 0px 34px 1px; color: [#161616](https://github.com/AlexOwl/vscode-transparent-color-theme/issues/161616) !important",
+    // ".monaco-editor .cursor": "background: #d4be98 !important; box-shadow: 0 0 70px 5px #d4be98, #d4be98 0px 0px 34px 1px; color: [#161616](https://github.com/AlexOwl/vscode-transparent-color-theme/issues/161616) !important",
+    // ".sidebar > .composite": "height: 12px !important",
+    // ".title-label": "display: none !important",
+    // ".title-actions": "display: none !important",
+    ".tabs-and-actions-container > .editor-actions": "display: none !important",
+    // ".titlebar-center": "display: none !important",
+    // ".titlebar-right": "display: none !important",
+    ".inline-tabs-placeholder": "display: none !important"
+    // ".split-view-view .visible": "background-color: #110f17 !important",
+  },
+  "apc.font.family": "JetBrainsMono Nerd Font",
+  "apc.monospace.font.family": "JetBrainsMono Nerd Font",
+  // apc - bars
+  "apc.activityBar": {
+    "position": "bottom",
+    "size": 28
+  },
+  "apc.statusBar": {
+    "position": "editor-bottom",
+    "height": 28,
+    "fontSize": 12
+  },
+  "apc.sidebar.titlebar": {
+    "height": 30
+  },
+  // animation settings - cursor
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "animations.Enabled": true,
+  "animations.CursorAnimation": false, // true
+  "animations.Smooth-Mode": false,
+  "animations.Command-Palette": "Scale",
+  "animations.Scrolling": "Fade",
+  "animations.CursorAnimationOptions": {
+    "TrailLength": 10,
+    "Color": "#d4be98",
+    "CursorStyle": "block"
+  },
+  // animation settings - others
+  "animations.Tabs": "Slide",
+  "animations.Active": "Scale",
+  // file nesting
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  // git stuff
+  "git.openRepositoryInParentFolders": "always",
+  "git.autofetch": true,
+  "git.confirmNoVerifyCommit": false,
+  "git.confirmSync": false,
+  "git.ignoreMissingGitWarning": true,
+  "gitlens.gitCommands.skipConfirmations": [
+    "fetch:command",
+    "stash-push:command",
+    "switch:command",
+    "push:command"
+  ],
+  "gitlens.hovers.currentLine.over": "line",
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+  "workbench.preferredLightColorTheme": "Quiet Light",
+  "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Gruvbox Material Dark",
+  "[cmake]": {
+    "editor.defaultFormatter": "KylinIDETeam.cmake-intellisence"
+  },
+  "workbench.editor.editorActionsLocation": "hidden",
+  "window.commandCenter": false,
+  "workbench.editorAssociations": {
+    "*.pdf": "latex-workshop-pdf-hook"
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+}
