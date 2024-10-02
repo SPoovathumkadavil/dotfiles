@@ -1,2 +1,3 @@
 .config/tmux/plugins/tmux-sensible
-/config/tmix/plugins/minimal-tmux-status
+.config/tmix/plugins/minimal-tmux-status
+.config/micro/buffers/history
