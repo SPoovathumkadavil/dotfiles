@@ -65,11 +65,12 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # aliases
-alias ls="exa"
+alias ls="eza"
 alias l="ls -la"
 alias la="ls -la"
-alias cls=clear
-alias cd=z
+alias cls="clear"
+alias cd="z"
+alias lg="lazygit"
 
 export EDITOR="nvim"
 
@@ -82,12 +83,11 @@ export PATH="$PATH:/Users/sally/.spicetify"
 export CMAKE_PREFIX_PATH="/Users/sally/.local/library/cmakelibs:$CMAKE_PREFIX_PATH"
 
 # always load tmux
-if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
-	tmux_chooser && exit
-fi
+# if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
+# 	tmux_chooser && exit
+# fi
 
 # shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 
-export PATH=$PATH:/Users/sally/.spicetify

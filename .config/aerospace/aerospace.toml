@@ -91,10 +91,11 @@ outer.right =      12
 alt-w = 'layout floating tiling'
 alt-f = 'fullscreen'
 
-alt-enter = 'exec-and-forget open -na /Applications/Alacritty.app'
+alt-enter = 'exec-and-forget open -na /Applications/WezTerm.app'
 alt-a = 'exec-and-forget open /Applications/Arc.app'
 alt-p = 'exec-and-forget /Users/sally/.local/scripts/muxman'
 alt-s = 'exec-and-forget open /Applications/Spotify.app'
+alt-g = 'exec-and-forget open /Applications/GitKraken.app'
 
 alt-q = 'close --quit-if-last-window'
 

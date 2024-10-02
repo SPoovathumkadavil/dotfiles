@@ -1,0 +1,66 @@
+theme = "gruvbox"
+
+[editor]
+scroll-lines = 1
+auto-pairs = false
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-type", "total-line-numbers", "file-encoding"]
+center = []
+right = ["selections", "primary-selection-length", "position", "position-percentage", "spacer", "diagnostics", "workspace-diagnostics", "version-control"]
+
+# https://docs.helix-editor.com/master/configuration.html#editorsoft-wrap-section
+[editor.soft-wrap]
+enable = true
+# wrap-at-text-width = true
+wrap-indicator = "↩ "
+
+[editor.cursor-shape]
+insert = "block"
+normal = "block"
+select = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true
+
+[keys.normal]
+g = { a = "code_action" } # Maps `ga` to show possible code actions
+"ret" = ["move_line_down", "goto_first_nonwhitespace"] # Maps the enter key to move to start of next line
+X = "extend_line_above"
+D = "delete_char_backward"
+"tab" = "goto_next_function" # Select and jump to the next function via Treesitter
+"S-tab" = "goto_prev_function" # Select and jump to the previous function via Treesitter
+
+# https://github.com/helix-editor/helix/discussions/7898
+space.c = "toggle_comments"
+
+# Use system clipboard
+p = "paste_clipboard_before"
+y = "yank_main_selection_to_clipboard"
+
+# https://github.com/helix-editor/helix/discussions/7908
+space.x = ":toggle whitespace.render all none"
+
+# Mark line and move with them up/down
+# https://github.com/helix-editor/helix/discussions/5764#discussioncomment-4840408
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+# Duplicate lines up/down
+# https://github.com/helix-editor/helix/issues/3680#issuecomment-1399443274
+# Also in [keys.insert]
+S-A-down = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", "collapse_selection"]
+S-A-up = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_with_yanked", "collapse_selection"]
+
+space."." = "file_picker_in_current_buffer_directory"
+
+[keys.insert]
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
+
+# Duplicate lines up/down
+# https://github.com/helix-editor/helix/issues/3680#issuecomment-1399443274
+S-A-down = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", "collapse_selection"]
+S-A-up = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_with_yanked", "collapse_selection"]
