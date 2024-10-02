@@ -36,8 +36,7 @@ zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 # Prompt
-PROMPT='%(?..) %2~ $ '
-
+PROMPT='%(?.%F{14}!%f.%F{9}?%f) %3~ $ '
 # load completions
 autoload -U compinit && compinit
 
@@ -71,8 +70,9 @@ alias la="ls -la"
 alias cls="clear"
 alias cd="z"
 alias lg="lazygit"
+alias edit="hx"
 
-export EDITOR="nvim"
+export EDITOR="hx"
 
 # path exports
 export PATH="$PATH:/Users/sally/.local/bin"
