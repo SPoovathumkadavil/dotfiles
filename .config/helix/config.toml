@@ -1,4 +1,4 @@
-theme = "gruvbox"
+theme = "gruvbox_material_dark_medium"
 
 [editor]
 scroll-lines = 1
