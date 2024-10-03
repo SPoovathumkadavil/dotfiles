@@ -5,9 +5,13 @@ scroll-lines = 1
 auto-pairs = false
 
 [editor.statusline]
-left = ["mode", "spinner", "file-name", "file-type", "total-line-numbers", "file-encoding"]
-center = []
-right = ["selections", "primary-selection-length", "position", "position-percentage", "spacer", "diagnostics", "workspace-diagnostics", "version-control"]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "workspace-diagnostics", "version-control"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 # https://docs.helix-editor.com/master/configuration.html#editorsoft-wrap-section
 [editor.soft-wrap]
@@ -16,8 +20,8 @@ enable = true
 wrap-indicator = "↩ "
 
 [editor.cursor-shape]
-insert = "block"
-normal = "block"
+insert = "bar"
+normal = "underline"
 select = "block"
 
 [editor.file-picker]

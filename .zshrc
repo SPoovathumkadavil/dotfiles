@@ -1,5 +1,10 @@
 # Created by newuser for 5.9
 
+command_not_found_handler() {
+    print -P "%F{13}-- what even is $@?%f"
+    return 127
+}
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -32,7 +37,6 @@ zinit light Aloxaf/fzf-tab
 # OMZ plugins
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 # Prompt
@@ -70,7 +74,6 @@ alias la="ls -la"
 alias cls="clear"
 alias cd="z"
 alias lg="lazygit"
-alias edit="hx"
 
 export EDITOR="hx"
 

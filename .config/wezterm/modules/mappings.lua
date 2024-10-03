@@ -45,12 +45,12 @@ return {
 
 		-- add new panes
 		{
-			key = "|",
+			key = "-",
 			mods = "LEADER",
 			action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 		},
 		{
-			key = "-",
+			key = "|",
 			mods = "LEADER",
 			action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 		},
