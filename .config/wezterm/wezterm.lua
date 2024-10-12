@@ -29,10 +29,10 @@ return {
 	hide_tab_bar_if_only_one_tab = true,
 	tab_max_width = 999999,
 	window_padding = {
-		left = 30,
-		right = 30,
-		top = 30,
-		bottom = 30,
+		left = 15,
+		right = 15,
+		top = 15,
+		bottom = 15,
 	},
 	window_decorations = "RESIZE",
 	inactive_pane_hsb = {
