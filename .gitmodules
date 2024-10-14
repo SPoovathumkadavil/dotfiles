@@ -1,0 +1,3 @@
+[submodule ".config/dynamic-island-sketchybar"]
+	path = .config/dynamic-island-sketchybar
+	url = https://github.com/crissNb/Dynamic-Island-Sketchybar
