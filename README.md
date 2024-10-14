@@ -1,3 +1,4 @@
+> Sal's Dotfiles for Arch (i3)
 
 # Requirements
 

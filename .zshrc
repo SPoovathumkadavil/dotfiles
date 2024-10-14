@@ -1,5 +1,10 @@
 # Created by newuser for 5.9
 
+command_not_found_handler() {
+    print -P "%F{13}-- what even is $@?%f"
+    return 127
+}
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -32,28 +37,10 @@ zinit light Aloxaf/fzf-tab
 # OMZ plugins
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
-# prompt
-export PROMPT='%(?.%F{14}⏺.%F{9}⏺)%f %2~ %# ' 
-autoload -Uz add-zsh-hook vcs_info
-setopt prompt_subst
-add-zsh-hook precmd vcs_info
-# Style the vcs_info message
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' formats '%b%u%c'
-# Format when the repo is in an action (merge, rebase, etc)
-zstyle ':vcs_info:git*' actionformats '%F{14}⏱ %*%f'
-zstyle ':vcs_info:git*' unstagedstr '*'
-zstyle ':vcs_info:git*' stagedstr '+'
-# This enables %u and %c (unstaged/staged changes) to work,
-# but can be slow on large repos
-zstyle ':vcs_info:*:*' check-for-changes true
-
-# Set the right prompt to the vcs_info message
-RPROMPT='⎇ ${vcs_info_msg_0_}'
-
+# Prompt
+PROMPT='%(?.%F{14}!%f.%F{9}?%f) %3~ $ '
 # load completions
 autoload -U compinit && compinit
 
@@ -81,15 +68,39 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # aliases
-alias ls=exa
+alias ls="eza"
 alias l="ls -la"
 alias la="ls -la"
-alias cls=clear
-alias cd=z
+alias cls="clear"
+alias cd="z"
+alias lg="lazygit"
+
+export EDITOR="nvim"
 
 # path exports
 export PATH="$PATH:/home/sally/.local/bin"
+export PATH="$PATH:/home/sally/.local/scripts"
+export PATH="$PATH:/home/sally/.cargo/bin"
+export PATH="$PATH:/home/sally/.spicetify"
+
+export CMAKE_PREFIX_PATH="/Users/sally/.local/library/cmakelibs:$CMAKE_PREFIX_PATH"
+
+# always load tmux
+# if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
+# 	tmux_chooser && exit
+# fi
 
 # shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Source the Lazyman shell initialization for aliases and nvims selector
+# shellcheck source=.config/nvim-Lazyman/.lazymanrc
+[ -f ~/.config/nvim-Lazyman/.lazymanrc ] && source ~/.config/nvim-Lazyman/.lazymanrc
+# Source the Lazyman .nvimsbind for nvims key binding
+# shellcheck source=.config/nvim-Lazyman/.nvimsbind
+[ -f ~/.config/nvim-Lazyman/.nvimsbind ] && source ~/.config/nvim-Lazyman/.nvimsbind

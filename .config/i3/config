@@ -15,9 +15,9 @@ exec --no-startup-id xrandr --output eDP-1 --off && xrandr --output HDMI-1 --pri
 exec --no-startup-id picom
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh 
-exec_always --no-startup-id feh --bg-scale ~/Documents/wallpapers/sunflowers.png
+exec_always --no-startup-id feh --bg-scale ~/.wallpapers/my-neighbor-totoro-sunflowers.png
 
-font pango:JetBrains Mono Nerd Font 8
+font pango:JetBrains Mono Nerd Font 11
 
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -38,7 +38,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 bindsym $mod+f exec firefox
 
 # kill focused window
@@ -53,10 +53,10 @@ bindsym $mod+a exec "rofi -modi drun,run -show drun"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -65,10 +65,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -227,3 +227,7 @@ client.unfocused        $bg         $bg         $bg     $bg         $bg
 client.urgent           $red        $red        $bg     $red        $red
 client.placeholder      $bg         $bg         $bg     $bg         $bg
 client.background       $bg
+
+# gaps inner 8px
+# gaps outer 10px
+
