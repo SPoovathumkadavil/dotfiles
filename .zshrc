@@ -82,6 +82,7 @@ export PATH="$PATH:/Users/sally/.local/bin"
 export PATH="$PATH:/Users/sally/.local/scripts"
 export PATH="$PATH:/Users/sally/.cargo/bin"
 export PATH="$PATH:/Users/sally/.spicetify"
+export PATH="$PATH:/Users/sally/Library/Python/3.13/bin"
 
 export CMAKE_PREFIX_PATH="/Users/sally/.local/library/cmakelibs:$CMAKE_PREFIX_PATH"
 
@@ -93,14 +94,3 @@ export CMAKE_PREFIX_PATH="/Users/sally/.local/library/cmakelibs:$CMAKE_PREFIX_PA
 # shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# Source the Lazyman shell initialization for aliases and nvims selector
-# shellcheck source=.config/nvim-Lazyman/.lazymanrc
-[ -f ~/.config/nvim-Lazyman/.lazymanrc ] && source ~/.config/nvim-Lazyman/.lazymanrc
-# Source the Lazyman .nvimsbind for nvims key binding
-# shellcheck source=.config/nvim-Lazyman/.nvimsbind
-[ -f ~/.config/nvim-Lazyman/.nvimsbind ] && source ~/.config/nvim-Lazyman/.nvimsbind
