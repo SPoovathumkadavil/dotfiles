@@ -61,12 +61,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 12
-inner.vertical = 12
-outer.left = 12
-outer.bottom = 12
-outer.top = 12
-outer.right = 12
+inner.horizontal = 15
+inner.vertical = 15
+outer.left = 15
+outer.bottom = 15
+outer.top = 15
+outer.right = 15
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -106,6 +106,8 @@ alt-p = 'exec-and-forget /Users/sally/.local/scripts/muxman'
 alt-s = 'exec-and-forget open /Applications/Spotify.app'
 alt-g = 'exec-and-forget open /Applications/GitKraken.app'
 alt-c = 'exec-and-forget open -na /Users/sally/wpilib/2024/vscode/Visual\ Studio\ Code.app'
+alt-r = 'exec-and-forget sketchybar --reload'
+alt-b = 'exec-and-forget ~/.local/scripts/bar_toggle'
 
 alt-q = 'close --quit-if-last-window'
 
