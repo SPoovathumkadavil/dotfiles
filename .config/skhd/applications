@@ -1,7 +1,0 @@
-
-ctrl - return: open -na /Applications/Alacritty.app
-ctrl - s: /Applications/Alacritty.app/Contents/MacOS/alacritty -e zsh -c "/Users/sally/dev/.bin/spt"
-ctrl + shift - a: open -a /Applications/Arc.app
-ctrl + shift - c: code
-ctrl - escape: /Applications/Alacritty.app/Contents/MacOS/alacritty -e zsh -c "btop" 
-
