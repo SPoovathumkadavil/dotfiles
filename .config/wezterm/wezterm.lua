@@ -13,7 +13,7 @@ end)
 return {
 	window_close_confirmation = "NeverPrompt",
 	default_cursor_style = "SteadyBlock",
-	color_scheme = "catppuccin-frappe",
+	color_scheme = "Gruvbox Material (Gogh)",
 	colors = {
 		cursor_bg = "#A6ACCD",
 		cursor_border = "#A6ACCD",
@@ -22,7 +22,7 @@ return {
 	-- font
 	font = wezterm.font("JetBrains Mono", { weight = "Medium" }),
 	font_size = 15,
-	window_background_opacity = 0.9,
+	window_background_opacity = 1.0,
 	-- tab bar
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = true,
