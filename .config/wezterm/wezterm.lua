@@ -13,7 +13,7 @@ end)
 return {
 	window_close_confirmation = "NeverPrompt",
 	default_cursor_style = "SteadyBlock",
-	color_scheme = "Gruvbox Material (Gogh)",
+	color_scheme = "Kanagawa (Gogh)",
 	colors = {
 		cursor_bg = "#A6ACCD",
 		cursor_border = "#A6ACCD",
