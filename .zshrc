@@ -86,9 +86,11 @@ export PATH="$PATH:/Users/sally/Library/Python/3.13/bin"
 
 export CMAKE_PREFIX_PATH="/Users/sally/.local/library/cmakelibs:$CMAKE_PREFIX_PATH"
 
+export XDG_CONFIG_HOME="/Users/sally/.config"
+
 # always load tmux
 # if [[ ! -v TMUX && $TERM_PROGRAM != "vscode" ]]; then
-# 	tmux_chooser && exit
+#   tmux
 # fi
 
 # shell integrations

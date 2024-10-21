@@ -3,8 +3,11 @@ alt - return : open -na WezTerm
 alt - c : open -na "Visual Studio Code"
 alt - a : open -a Arc
 alt - s : open -a Spotify
-alt - e : wezterm start -- yazi ~/
+alt - e : alacritty -e yazi ~/
 alt - m : open -a Mail
+alt - p : alacritty -e music
+cmd - space : dmenu-mac
+shift + ctrl - escape : wezterm start -- btop
 
 alt - q : yabai -m window --close
 
