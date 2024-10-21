@@ -5,7 +5,7 @@ alt - a : open -a Arc
 alt - s : open -a Spotify
 alt - e : alacritty -e yazi ~/
 alt - m : open -a Mail
-alt - p : alacritty -e music
+alt - p : music dmenu
 cmd - space : dmenu-mac
 shift + ctrl - escape : alacritty -e btop
 
