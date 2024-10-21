@@ -1,5 +1,5 @@
 # open iTerm2, VScode, and Firefox with shortcuts
-alt - return : open -na WezTerm
+alt - return : open -na Alacritty
 alt - c : open -na "Visual Studio Code"
 alt - a : open -a Arc
 alt - s : open -a Spotify
@@ -7,7 +7,7 @@ alt - e : alacritty -e yazi ~/
 alt - m : open -a Mail
 alt - p : alacritty -e music
 cmd - space : dmenu-mac
-shift + ctrl - escape : wezterm start -- btop
+shift + ctrl - escape : alacritty -e btop
 
 alt - q : yabai -m window --close
 

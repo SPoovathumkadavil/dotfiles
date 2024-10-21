@@ -1,0 +1,122 @@
+# A git utility script for managing submodules
+
+# help
+function help() {
+    echo "Usage: smod [command] [options]"
+    echo "Commands:"
+    echo "  add [module] [url] - Add a submodule"
+    echo "  pull - Update all submodules recursively"
+    echo "  remove [module] - Remove a submodule"
+    echo "  help - Display this help"
+    echo "Options:"
+    echo "  -v, --verbose - Verbose output"
+}
+
+# check if git is installed
+if ! command -v git &> /dev/null; then
+    echo "Error: git is not installed"
+    exit 1
+fi
+
+# check if the current directory is a git repository
+if [ ! -d .git ]; then
+    echo "Error: not a git repository"
+    exit 1
+fi
+
+# check if the current directory contains submodules
+# if [ ! -f .gitmodules ]; then
+#     echo "Error: not a git repository with submodules"
+#     exit 1
+# fi
+
+# check if the current directory is the root of the git repository
+if [ ! -f .git/config ]; then
+    echo "Error: not the root of the git repository"
+    exit 1
+fi
+
+# set verbose flag
+VERBOSE=false
+if [[ "$@" =~ "-v" ]]; then
+    VERBOSE=true
+fi
+
+# add a submodule
+function add() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: smodule.sh add [module] [url]"
+        exit 1
+    fi
+    git submodule add $2 $1
+    if [ "$VERBOSE" = true ]; then
+        # print the submodule status
+        git submodule status
+    fi
+}
+
+function status() {
+    git submodule status
+}
+
+# update all submodules
+function update() {
+    if [ "$VERBOSE" = true ]; then
+        # print the submodule status
+        git submodule update --recursive --remote
+        git submodule status
+    else
+        git submodule update --recursive --remote
+    fi
+}
+
+# remove a submodule
+function remove() {
+    if [ $# -ne 1 ]; then
+        echo "Usage: smodule.sh remove [module]"
+        exit 1
+    fi
+    if [ "$VERBOSE" = true ]; then
+        # print the submodule status
+        echo "Submodule status before removing $1:"
+        git submodule status
+    fi
+    git submodule deinit -f $1
+    git rm -f $1
+    rm -rf .git/modules/$1
+    if [ "$VERBOSE" = true ]; then
+        # print the submodule status
+        echo "Submodule status after removing $1:"
+        git submodule status
+    fi
+}
+
+# main
+if [ $# -lt 1 ]; then
+    help
+    exit 1
+fi
+
+case $1 in
+    add)
+        add $2 $3
+        ;;
+    pull)
+        update
+        ;;
+    remove)
+        remove $2
+        ;;
+    status)
+        status
+        ;;
+    help)
+        help
+        ;;
+    *)
+        help
+        exit 1
+        ;;
+esac
+
+exit 0

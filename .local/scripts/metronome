@@ -1,0 +1,19 @@
+# Usage: metronome bpm [minutes [volume]]
+
+bpm=$1
+if [[ $bpm == '-h' || $bpm == '--help' || $bpm == '' ]]; then
+	echo 'Usage: metronome bpm [minutes [volume]]'
+	return
+fi
+minutes=$2
+volume=$3
+if [[ $minutes != '' ]]; then
+	beats=$(awk "BEGIN { print $bpm * $minutes }")
+else
+	beats='-'
+fi
+if [[ $volume == '' ]]; then
+	volume=1
+fi
+echo "BPM $bpm minutes $minutes Volume $volume"
+play -n -c1 synth 0.004 sine 2000 pad $(awk "BEGIN { print 60/$bpm -.004 }") repeat $beats vol $volume

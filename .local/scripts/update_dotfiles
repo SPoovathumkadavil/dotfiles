@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cd ~/.dotfiles && stow . --adopt && git add . && git commit -m "update dotfiles (script)"

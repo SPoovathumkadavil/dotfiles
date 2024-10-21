@@ -1,0 +1,12 @@
+#!/bin/sh
+
+case "$1" in
+dmenu)
+  dir=$(find ~/.music -depth 1 | xargs basename | dmenu-mac)
+  alacritty -e shuffle ~/.music/$dir
+  ;;
+*)
+  dir=$(find ~/.music -depth 1 | fzf)
+  shuffle $dir
+  ;;
+esac

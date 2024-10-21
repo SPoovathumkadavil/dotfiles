@@ -1,0 +1,3 @@
+#!/bin/sh
+
+brew services list --json | jq -e '[.[] | select(.name == "sketchybar" and .status == "started")] | any' >/dev/null && brew services stop sketchybar || brew services start sketchybar

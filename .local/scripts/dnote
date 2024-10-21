@@ -1,0 +1,21 @@
+#!/bin/bash
+# daily node creater
+
+destination=$1
+type=$2
+date=$(date '+%Y-%m-%d')
+file=$(date '+%Y-%m-%d').md
+
+echo $destination/$file
+
+if [ -f $destination/$file ]; then
+  exit 0
+fi
+
+touch $destination/$file
+
+if [[ $type == journal ]]; then
+  printf -- "---\nid: $date\ncreated_date: $date\nupdated_date: $date\ntype: journal\n---\n# $date\n- **tags** : #$(date '+%m-%Y') #journal\n\n## Thoughts" "" >>$destination/$file
+elif [[ $type == todo ]]; then
+  printf -- "---\nid: $date\ncreated_date: $date\nupdated_date: $date\ntype: todo\n---\n# $date\n- **tags** : #$(date '+%m-%Y') #todo\n\n## Thoughts" "" >>$destination/$file
+fi
