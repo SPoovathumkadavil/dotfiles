@@ -1,5 +1,5 @@
 # open iTerm2, VScode, and Firefox with shortcuts
-alt - return : open -na Alacritty
+alt - return : alacritty
 alt - c : open -na "Visual Studio Code"
 alt - a : open -a Arc
 alt - s : open -a Spotify

@@ -2,7 +2,7 @@
 
 case "$1" in
 dmenu)
-  dir=$(find ~/.music -depth 1 | xargs basename | dmenu-mac)
+  dir=$(ls ~/.music | dmenu-mac)
   alacritty -e shuffle ~/.music/$dir
   ;;
 *)
