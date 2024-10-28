@@ -1,6 +1,7 @@
 [opener]
 edit = [
-  { run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+  { run = '${EDITOR:-nvim} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+  { run = 'code "$@"', desc = "code", for = "unix" },
   { run = 'code %*', orphan = true, desc = "code", for = "windows" },
   { run = 'code -w %*', block = true, desc = "code (block)", for = "windows" },
 ]
@@ -28,23 +29,54 @@ play = [
 [open]
 rules = [
   # Folder
-  { name = "*/", use = ["edit", "open", "reveal"] },
+  { name = "*/", use = [
+    "edit",
+    "open",
+    "reveal",
+  ] },
   # Text
-  { mime = "text/*", use = ["edit", "reveal"] },
+  { mime = "text/*", use = [
+    "edit",
+    "reveal",
+  ] },
   # Image
-  { mime = "image/*", use = ["open", "reveal"] },
+  { mime = "image/*", use = [
+    "open",
+    "reveal",
+  ] },
   # Media
-  { mime = "{audio,video}/*", use = ["play", "reveal"] },
+  { mime = "{audio,video}/*", use = [
+    "play",
+    "reveal",
+  ] },
   # Archive
-  { mime = "application/{,g}zip", use = ["extract", "reveal"] },
-  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = ["extract", "reveal"] },
+  { mime = "application/{,g}zip", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", use = [
+    "extract",
+    "reveal",
+  ] },
   # JSON
-  { mime = "application/{json,x-ndjson}", use = ["edit", "reveal"] },
-  { mime = "*/javascript", use = ["edit", "reveal"] },
+  { mime = "application/{json,x-ndjson}", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "*/javascript", use = [
+    "edit",
+    "reveal",
+  ] },
   # Empty file
-  { mime = "inode/x-empty", use = ["edit", "reveal"] },
+  { mime = "inode/x-empty", use = [
+    "edit",
+    "reveal",
+  ] },
   # Fallback
-  { name = "*", use = ["open", "reveal"] },
+  { name = "*", use = [
+    "open",
+    "reveal",
+  ] },
 ]
 
 [tasks]
@@ -98,9 +130,7 @@ previewers = [
   # Fallback
   { name = "*", run = "file" },
 ]
-prepend_previewers = [
-    { mime = "text/csv", run = "miller"},
-]
+prepend_previewers = [{ mime = "text/csv", run = "miller" }]
 
 [input]
 cursor_blink = false
