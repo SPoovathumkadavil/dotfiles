@@ -1,0 +1,11 @@
+# open iTerm2, VScode, and Firefox with shortcuts
+alt - return : open -na Wezterm
+alt - c : open -a Calendar
+alt - a : open -a Arc
+# alt - s : open -a Spotify
+alt - s : alacritty -e spt
+alt - e : alacritty -e yazi ~/
+alt - m : open -a Mail
+alt - p : music dmenu
+cmd - space : dmenu-mac
+shift + ctrl - escape : alacritty -e btop

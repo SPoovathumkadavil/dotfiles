@@ -20,8 +20,9 @@ return {
 		cursor_fg = "#1B1E28",
 	},
 	-- font
-	font = wezterm.font("JetBrains Mono", { weight = "Medium" }),
-	font_size = 15,
+	font = wezterm.font("GohuFont uni14 Nerd Font", { weight = "Medium" }),
+	font_size = 18,
+	line_height = 1.2,
 	window_background_opacity = 1.0,
 	-- tab bar
 	use_fancy_tab_bar = false,

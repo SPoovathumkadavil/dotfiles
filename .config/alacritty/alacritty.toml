@@ -19,7 +19,8 @@ hide_when_typing = true
 
 [font]
 # normal.family = "JetBrainsMono Nerd Font"
-normal.family = "GohuFont uni14 Nerd Font"
+normal.family = "GohuFont uni14 Nerd Font Mono"
 # normal.family = "FiraCode Nerd Font Mono"
+# offset.y = 10
 
-size = 15
+size = 18
