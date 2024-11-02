@@ -140,10 +140,12 @@ let light_theme = {
     shape_raw_string: light_purple
 }
 
+source ~/.config/nushell/themes/gruvbox-material-dark.nu
+
 # External completer example
-# let carapace_completer = {|spans|
-#     carapace $spans.0 nushell ...$spans | from json
-# }
+let carapace_completer = {|spans|
+    carapace $spans.0 nushell ...$spans | from json
+}
 
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
@@ -906,6 +908,7 @@ source ~/.cache/carapace/init.nu
 alias l = ls
 alias ll = ls -la
 alias cls = clear
+alias v = nvim
 
 # starship
 
