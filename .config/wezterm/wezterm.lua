@@ -13,6 +13,7 @@ end)
 return {
 	window_close_confirmation = "NeverPrompt",
 	default_cursor_style = "SteadyBlock",
+	default_prog = { "nu", '--config "~/.config/nushell/config.nu"', "--env-config ~/.config/nushell/env.nu" },
 	color_scheme = "Gruvbox Material (Gogh)",
 	colors = {
 		cursor_bg = "#A6ACCD",
