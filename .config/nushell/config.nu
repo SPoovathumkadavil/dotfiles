@@ -140,7 +140,7 @@ let light_theme = {
     shape_raw_string: light_purple
 }
 
-source ~/.config/nushell/themes/gruvbox-material-dark.nu
+# source ~/.config/nushell/themes/catppuccin-mocha.nu
 
 # External completer example
 let carapace_completer = {|spans|
@@ -149,7 +149,7 @@ let carapace_completer = {|spans|
 
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
-    show_banner: true # true or false to enable or disable the welcome banner at startup
+    show_banner: false # true or false to enable or disable the welcome banner at startup
 
     ls: {
         use_ls_colors: true # use the LS_COLORS environment variable to colorize output
@@ -242,7 +242,7 @@ $env.config = {
     buffer_editor: null # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
-    edit_mode: emacs # emacs, vi
+    edit_mode: vi # emacs, vi
     shell_integration: {
         # osc2 abbreviates the path if in the home_dir, sets the tab/window title, shows the running command in the tab/window title
         osc2: true
@@ -899,35 +899,7 @@ $env.config = {
     ]
 }
 
-def install_plugin [plugin_name: string, git_repository_url?: string, git_tag?: string] {
-    mut cargo_install_flags = {}
-
-    # Git repository URL defaults to Nushell repository.
-    if ($git_repository_url == null) {
-        $cargo_install_flags = ($cargo_install_flags | insert "--git" "https://github.com/nushell/nushell.git")
-    } else {
-        $cargo_install_flags = ($cargo_install_flags | insert "--git" $git_repository_url)
-    }
-
-    # If the repository URL is the Nushell repository, the tag defaults to
-    # the current Nushell version.
-    if $git_tag != null and $git_tag != "" {
-        $cargo_install_flags = ($cargo_install_flags | insert "--tag" $git_tag)
-    } else if ($cargo_install_flags | get "--git") == "https://github.com/nushell/nushell.git" {
-        $cargo_install_flags = ($cargo_install_flags | insert "--tag" (version | get version))
-    }
-
-    let flags = ($cargo_install_flags | items {|key, value| echo $'($key) ($value)' } | str join " ")
-    nu -c $"cargo install ($flags) nu_plugin_($plugin_name)";
-
-    const home_directory = ("~" | path expand)
-    let cargo_bin_directory = $"($home_directory)/.cargo/bin"
-    mut plugin_path = $"($cargo_bin_directory)/nu_plugin_($plugin_name)"
-    if (sys).host.name == "Windows" {
-        $plugin_path += ".exe"
-    }
-    nu -c $"register ($plugin_path)"
-}
+source ~/.config/nushell/functions.nu
 
 # carapace
 
