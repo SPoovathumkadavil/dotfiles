@@ -1,6 +1,5 @@
 # open iTerm2, VScode, and Firefox with shortcuts
 alt - return : open -na Wezterm
-alt - c : open -a Calendar
 alt - a : open -a Arc
 # alt - s : open -a Spotify
 alt - s : alacritty -e spt

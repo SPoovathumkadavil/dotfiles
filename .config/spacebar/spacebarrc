@@ -21,9 +21,9 @@ spacebar -m config dnd_icon_color 0xffa8a8a8
 spacebar -m config clock_icon_color 0xffa8a8a8
 spacebar -m config power_icon_strip B C
 spacebar -m config space_icon_strip I II III IV V VI VII VIII IX X
-spacebar -m config space_icon SPC
+# spacebar -m config space_icon SPC
 spacebar -m config clock_icon CLK
 spacebar -m config dnd_icon DND
-spacebar -m config clock_format "%d/%m/%y %R"
+spacebar -m config clock_format "%d/%m/%y %I::%M %p"
 
 echo "spacebar configuration loaded.."

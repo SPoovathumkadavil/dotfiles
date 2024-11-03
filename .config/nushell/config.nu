@@ -905,13 +905,6 @@ source ~/.config/nushell/functions.nu
 
 source ~/.cache/carapace/init.nu
 
-# aliases
-
-alias l = ls
-alias ll = ls -la
-alias cls = clear
-alias v = nvim
-
 # starship
 
 use ~/.cache/starship/init.nu
@@ -919,3 +912,11 @@ use ~/.cache/starship/init.nu
 # zoxide
 
 source ~/.cache/nushell/zoxide.nu
+
+# aliases
+
+alias l = ls
+alias ll = ls -la
+alias cls = clear
+alias v = nvim
+alias cd = z

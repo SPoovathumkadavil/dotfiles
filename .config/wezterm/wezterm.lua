@@ -13,7 +13,11 @@ end)
 return {
 	window_close_confirmation = "NeverPrompt",
 	default_cursor_style = "SteadyBlock",
-	default_prog = { "nu", '--config "~/.config/nushell/config.nu"', "--env-config ~/.config/nushell/env.nu" },
+	default_prog = {
+		"/opt/homebrew/bin/nu",
+		'--config "~/.config/nushell/config.nu"',
+		"--env-config ~/.config/nushell/env.nu",
+	},
 	color_scheme = "Catppuccin Frappe",
 	colors = {
 		cursor_bg = "#A6ACCD",
@@ -21,7 +25,7 @@ return {
 		cursor_fg = "#1B1E28",
 	},
 	-- font
-	font = wezterm.font("GohuFont uni14 Nerd Font", { weight = "Medium" }),
+	font = wezterm.font("GohuFont uni14 Nerd Font", { weight = "Bold" }),
 	font_size = 18,
 	line_height = 1.2,
 	window_background_opacity = 1.0,
