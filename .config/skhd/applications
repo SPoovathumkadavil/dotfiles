@@ -2,9 +2,9 @@
 alt - return : open -na Wezterm
 alt - a : open -a Arc
 # alt - s : open -a Spotify
-alt - s : alacritty -e spt
-alt - e : alacritty -e yazi ~/
+alt - s : wezterm start -- spt
+alt - e : wezterm start -- yazi ~/
 alt - m : open -a Mail
-alt - p : music dmenu
+alt - p : music dmenu && echo $PATH
 cmd - space : dmenu-mac
-shift + ctrl - escape : alacritty -e btop
+shift + ctrl - escape : wezterm start -- btop

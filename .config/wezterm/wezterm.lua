@@ -18,7 +18,7 @@ return {
 		'--config "~/.config/nushell/config.nu"',
 		"--env-config ~/.config/nushell/env.nu",
 	},
-	color_scheme = "Catppuccin Frappe",
+	color_scheme = "Catppuccin Macchiato",
 	colors = {
 		cursor_bg = "#A6ACCD",
 		cursor_border = "#A6ACCD",
