@@ -59,6 +59,14 @@ case "$SENDER" in
 "mouse.clicked")
     osascript -e 'tell application "Spotify" to playpause'
     ;;
+"mouse.scrolled")
+    delta=$(echo "$INFO" | jq ".delta")
+    if [[ "$delta" -ge 0 ]]; then
+      osascript -e 'tell application "Spotify" to next track'
+    elif [[ "$delta" -le 0 ]]; then
+      osascript -e 'tell application "Spotify" to previous track'
+    fi
+    ;;
 *)
     update_track
     ;;

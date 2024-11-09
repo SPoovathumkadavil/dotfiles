@@ -11,4 +11,5 @@ if [[ $MAIN_DISPLAY = "Built-in" ]]; then
     source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
 else
     source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"
+    # source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
 fi

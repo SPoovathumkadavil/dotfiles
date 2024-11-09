@@ -44,7 +44,7 @@ update_track() {
                 ARTIST="${ARTIST:0:$((MAX_LENGTH - TRACK_LENGTH - 1))}…"
             fi
         fi
-        sketchybar --set $NAME label="${TRACK}  ${ARTIST}" label.drawing=yes background.color=0xffa6da95
+        sketchybar --set $NAME label="${TRACK}   ${ARTIST}" label.drawing=yes background.color=0xffa6da95 
 
     elif [ $PLAYER_STATE = "Paused" ]; then
         sketchybar --set $NAME background.color=0xffeed49f
@@ -58,6 +58,14 @@ update_track() {
 case "$SENDER" in
 "mouse.clicked")
     osascript -e 'tell application "Spotify" to playpause'
+    ;;
+"mouse.scrolled")
+    delta=$(echo "$INFO" | jq ".delta")
+    if [[ "$delta" -ge 0 ]]; then
+      osascript -e 'tell application "Spotify" to next track'
+    elif [[ "$delta" -le 0 ]]; then
+      osascript -e 'tell application "Spotify" to previous track'
+    fi
     ;;
 *)
     update_track

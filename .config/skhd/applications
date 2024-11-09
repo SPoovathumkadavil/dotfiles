@@ -5,6 +5,6 @@ alt - a : open -a Arc
 alt - s : wezterm start -- spt
 alt - e : wezterm start -- yazi ~/
 alt - m : open -a Mail
-alt - p : music dmenu && echo $PATH
+alt - p : wallpaper dmenu
 cmd - space : dmenu-mac
 shift + ctrl - escape : wezterm start -- btop
