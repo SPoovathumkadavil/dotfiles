@@ -29,7 +29,8 @@ sketchybar --default \
     label.y_offset=0 \
     label.padding_left=0 \
     label.padding_right=5 \
-    background.corner_radius=5
+    background.corner_radius=5 
+    # background.padding_right=5 
 
 sketchybar --add item current_space left \
     --set current_space \
@@ -52,6 +53,7 @@ sketchybar --add event spotify_change $SPOTIFY_EVENT \
     icon.y_offset=1 \
     label.drawing=off \
     label.padding_left=3 \
+    background.padding_right=5 \
     script="$PLUGIN_DIR/spotify.sh" \
     --subscribe spotify spotify_change mouse.clicked mouse.scrolled
 
