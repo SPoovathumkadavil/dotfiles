@@ -38,12 +38,6 @@ sketchybar --add item current_space left \
     script="$PLUGIN_SHARED_DIR/current_space.sh" \
     --subscribe current_space space_change mouse.clicked
 
-sketchybar --add bracket front_app_bracket \
-    front_app \
-    front_app.separator \
-    front_app.name \
-    --subscribe front_app front_app_switched
-
 sketchybar --add item clock right \
     --set clock \
     icon=󰃰 \
