@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 FONT_FACE="JetBrainsMono Nerd Font"
+ALT_FONT="GohuFont uni14 Nerd Font"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins-desktop"
 PLUGIN_SHARED_DIR="$HOME/.config/sketchybar/plugins"
 
@@ -16,16 +17,16 @@ sketchybar --bar \
     padding_left=5 \
     padding_right=5 \
     notch_width=188 \
-    display=all
+    display=main
 
 sketchybar --default \
     background.height=32 \
     icon.color=0xff24273a \
-    icon.font="$FONT_FACE:Regular:20.0" \
+    icon.font="$FONT_FACE:Medium:20.0" \
     icon.padding_left=5 \
     icon.padding_right=5 \
     label.color=0xff24273a \
-    label.font="$FONT_FACE:Regular:14.0" \
+    label.font="$ALT_FONT:Regular:14.0" \
     label.y_offset=0 \
     label.padding_left=0 \
     label.padding_right=5 \

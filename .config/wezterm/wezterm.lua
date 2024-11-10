@@ -29,6 +29,8 @@ return {
 	font_size = 18,
 	line_height = 1.2,
 	window_background_opacity = 1.0,
+	freetype_load_flags = "NO_HINTING",
+	front_end = "OpenGL",
 	-- tab bar
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = true,
