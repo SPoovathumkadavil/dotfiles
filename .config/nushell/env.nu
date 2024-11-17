@@ -95,7 +95,7 @@ $env.PATH = ($env.PATH | split row (char esep))
 path add ($env.HOME | path join ".cargo" "bin")
 path add ($env.HOME | path join ".local" "bin")
 path add ($env.HOME | path join ".local" "scripts")
-path add /opt/homebrew/bin
+path add ($env.HOME | path join ".bun" "bin")
 path add /usr/local/bin
 $env.PATH = ($env.PATH | uniq)
 
