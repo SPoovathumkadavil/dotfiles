@@ -9,6 +9,7 @@ MAIN_DISPLAY=$(system_profiler SPDisplaysDataType | grep -B 3 'Main Display:' | 
 
 if [[ $MAIN_DISPLAY = "Built-in" ]]; then
     source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"
+    # source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"
 else
     source "$SKETCHYBAR_CONFIG/sketchybarrc-desktop"
     # source "$SKETCHYBAR_CONFIG/sketchybarrc-laptop"

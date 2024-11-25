@@ -13,12 +13,12 @@ end)
 return {
 	window_close_confirmation = "NeverPrompt",
 	default_cursor_style = "SteadyBlock",
-	default_prog = {
-		"/opt/homebrew/bin/nu",
-		'--config "~/.config/nushell/config.nu"',
-		"--env-config ~/.config/nushell/env.nu",
-	},
-	color_scheme = "Catppuccin Mocha",
+	-- default_prog = {
+	-- 	"/opt/homebrew/bin/nu",
+	-- 	'--config "~/.config/nushell/config.nu"',
+	-- 	"--env-config ~/.config/nushell/env.nu",
+	-- },
+	color_scheme = "Gruvbox dark, hard (base16)",
 	colors = {
 		cursor_bg = "#A6ACCD",
 		cursor_border = "#A6ACCD",

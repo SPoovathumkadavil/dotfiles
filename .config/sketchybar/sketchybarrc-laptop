@@ -16,7 +16,8 @@ sketchybar --bar \
     padding_left=23 \
     padding_right=23 \
     notch_width=194 \
-    display=main
+    display=main \
+    y_offset=0
 
 # Alternatiive background colors
 # label.color=0xffffffff
@@ -80,7 +81,7 @@ sketchybar --add item front_app left \
     background.color=0x00000000 \
     background.padding_right=0 \
     icon.drawing=off \
-    label.font="$FONT_FACE:Bold:12.0" \
+    label.font="$ALT_FONT:Regular:12.0" \
     label.drawing=yes
 
 sketchybar --add item weather.moon q \

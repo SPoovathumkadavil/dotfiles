@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python -c "import datetime; print((datetime.date.today() - datetime.date($1)).days + $2)"

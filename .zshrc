@@ -40,7 +40,8 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::command-not-found
 
 # Prompt
-PROMPT='%(?.%F{14}!%f.%F{9}?%f) %3~ $ '
+# PROMPT='%(?.%F{14}!%f.%F{9}?%f) %3~ $ '
+
 # load completions
 autoload -U compinit && compinit
 
@@ -69,7 +70,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # aliases
 alias ls="eza"
-alias l="ls -la"
+alias l="ls -a"
 alias la="ls -la"
 alias cls="clear"
 alias cd="z"
@@ -96,3 +97,4 @@ export XDG_CONFIG_HOME="/Users/sally/.config"
 # shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
