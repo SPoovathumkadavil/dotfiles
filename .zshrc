@@ -84,6 +84,7 @@ export PATH="$PATH:/Users/sally/.local/scripts"
 export PATH="$PATH:/Users/sally/.cargo/bin"
 export PATH="$PATH:/Users/sally/.spicetify"
 export PATH="$PATH:/Users/sally/Library/Python/3.13/bin"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 
 export CMAKE_PREFIX_PATH="/Users/sally/.local/library/cmakelibs:$CMAKE_PREFIX_PATH"
 

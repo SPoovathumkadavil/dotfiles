@@ -26,7 +26,7 @@ return {
 	},
 	-- font
 	font = wezterm.font("GohuFont uni14 Nerd Font", { weight = "Bold" }),
-	font_size = 18,
+	font_size = 17,
 	line_height = 1.2,
 	window_background_opacity = 1.0,
 	freetype_load_flags = "NO_HINTING",
