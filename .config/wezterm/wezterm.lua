@@ -18,7 +18,7 @@ return {
 	-- 	'--config "~/.config/nushell/config.nu"',
 	-- 	"--env-config ~/.config/nushell/env.nu",
 	-- },
-	color_scheme = "Gruvbox dark, hard (base16)",
+	color_scheme = "Gruvbox Material (Gogh)",
 	colors = {
 		cursor_bg = "#A6ACCD",
 		cursor_border = "#A6ACCD",

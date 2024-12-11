@@ -9,7 +9,6 @@ getcolor() {
   if [[ -z $OPACITY ]]; then
     OPACITY=100
   fi
-  
 
   # Rose Pine https://rosepinetheme.com/palette/ingredients/
   COLORS=(
@@ -27,11 +26,10 @@ getcolor() {
     white "#e0def4"
   )
 
-
   # Loop through the array to find the color hex by name
-  for ((i=0; i<${#COLORS[@]}; i+=2)); do
+  for ((i = 0; i < ${#COLORS[@]}; i += 2)); do
     if [[ "${COLORS[i]}" == "$COLOR_NAME" ]]; then
-      COLOR="${COLORS[i+1]}"
+      COLOR="${COLORS[i + 1]}"
       break
     fi
   done
@@ -47,7 +45,7 @@ getcolor() {
 
 PERCENT2HEX() {
   local PERCENTAGE=$1
-  local DECIMAL=$(( (PERCENTAGE * 255) / 100 ))
+  local DECIMAL=$(((PERCENTAGE * 255) / 100))
   printf "0x%02X\n" "$DECIMAL"
 }
 
@@ -92,3 +90,4 @@ export TRANSPARENT=$(getcolor black 0)
 # local purple=#bb9af7
 # local black=#1a1b26
 # local white=#cfc9c2
+

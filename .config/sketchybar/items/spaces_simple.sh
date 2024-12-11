@@ -6,8 +6,8 @@ source "$CONFIG_DIR/globalstyles.sh"
 # Default styles
 spaces=(
   ignore_association=on
-  updates=on                           
-  associated_display=1                 
+  updates=on
+  associated_display=1
   background.height=16
   icon.padding_left=$PADDINGS
   icon.padding_right=$PADDINGS
@@ -19,54 +19,59 @@ spaces=(
 # Define spaces
 space_properties="[
   {
-    \"icon\": \"$ICON_WEB\",
+    \"icon\": \"1\",
     \"label\": \"\",
     \"color\": \"teal\"
   },
   {
-    \"icon\": \"$ICON_MAIL\",
+    \"icon\": \"2\",
     \"label\": \"\",
     \"color\": \"orange\"
   },
   {
-    \"icon\": \"$ICON_REMINDERS\",
+    \"icon\": \"3\",
     \"label\": \"\",
     \"color\": \"yellow\"
   },
   {
-    \"icon\": \"$ICON_TERM\",
+    \"icon\": \"4\",
     \"label\": \"\",
     \"color\": \"cyan\"
   },
   {
-    \"icon\": \"$ICON_MUSIC\",
+    \"icon\": \"5\",
     \"label\": \"\",
     \"color\": \"green\"
   },
   {
-    \"icon\": \"$ICON_FIGMA\",
+    \"icon\": \"6\",
     \"label\": \"\",
     \"color\": \"blue\"
   },
   {
-    \"icon\": \"$ICON_DOCUMENTS\",
+    \"icon\": \"7\",
     \"label\": \"\",
     \"color\": \"purple\"
+  },
+  {
+    \"icon\": \"8\",
+    \"label\": \"\",
+    \"color\": \"teal\"
   }
 ]"
 
 SPACE_COUNT=$(echo "$space_properties" | jq '. | length')
 
-for (( SID=1; SID<=SPACE_COUNT; SID++ )); do
+for ((SID = 1; SID <= SPACE_COUNT; SID++)); do
   SIDJSON=$((SID - 1))
   SPACE_COLOR=$(getcolor $(echo "$space_properties" | jq -r .[$SIDJSON].color))
-  sketchybar --add space space.$SID left                                         \
-             --set space.$SID "${spaces[@]}"                                     \
-                   associated_space=$SID                                         \
-                   icon=$(echo "$space_properties" | jq -r ".[$SIDJSON].icon")   \
-                   label=$(echo "$space_properties" | jq -r ".[$SIDJSON].label") \
-                   icon.highlight_color=$SPACE_COLOR                             \
-                   label.highlight_color=$SPACE_COLOR                            \
-                   script="$PLUGIN_DIR/app_space_simple.sh $SID $SPACE_COLOR"    \
-             --subscribe space.$SID mouse.clicked space_change update_yabai_icon front_app_switched
+  sketchybar --add space space.$SID left \
+    --set space.$SID "${spaces[@]}" \
+    associated_space=$SID \
+    icon=$(echo "$space_properties" | jq -r ".[$SIDJSON].icon") \
+    label=$(echo "$space_properties" | jq -r ".[$SIDJSON].label") \
+    icon.highlight_color=$SPACE_COLOR \
+    label.highlight_color=$SPACE_COLOR \
+    script="$PLUGIN_DIR/app_space_simple.sh $SID $SPACE_COLOR" \
+    --subscribe space.$SID mouse.clicked space_change update_yabai_icon front_app_switched
 done

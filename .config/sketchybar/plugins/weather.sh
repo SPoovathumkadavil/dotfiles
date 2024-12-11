@@ -115,7 +115,7 @@ render_item() {
   if [ "$TEMP" = "" ]; then
     args=(--set $NAME icon="􀌏" label.drawing=off)
   else
-    args=(--set $NAME icon="$ICON" icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°" label.drawing=on)
+    args=(--set $NAME icon="$ICON" icon.font="JetBrainsMono Nerd Font:Bold:16.0" label="${TEMP}°" label.drawing=on)
   fi
 
   sketchybar "${args[@]}" >/dev/null
@@ -138,14 +138,14 @@ update() {
     DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
     CONDITION=$(echo $DATA | jq -r '.current.condition.code')
     CONDITION_TEXT=$(echo $DATA | jq -r '.current.condition.text')
-    TEMP=$(echo $DATA | jq -r '.current.temp_c | floor')
+    TEMP=$(echo $DATA | jq -r '.current.temp_f | floor')
     FEELSLIKE=$(echo $DATA | jq -r '.current.feelslike_f')
     HUMIDITY=$(echo $DATA | jq -r '.current.humidity')
     IS_DAY=$(echo $DATA | jq -r '.current.is_day')
     LAT=$(echo $DATA | jq -r '.location.lat')
     LON=$(echo $DATA | jq -r '.location.lon')
     LOCATION=$(echo $DATA | jq -r '.location.name' && echo ', ' && echo $DATA | jq -r '.location.country')
-  
+
     [ "$IS_DAY" = "1" ] && ICON=${WEATHER_ICONS_DAY[$CONDITION]} || ICON=${WEATHER_ICONS_NIGHT[$CONDITION]}
     args=()
   fi

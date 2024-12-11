@@ -11,15 +11,15 @@ FOCUSED_APP=$(yabai -m query --windows app --window | jq -r '.app')
 
 update_colors() {
   if [[ "$SID" == "$PREV_SID" ]]; then
-    sketchybar --animate tanh 20                                      \
-               --set space.$PREV_SID background.color=$TRANSPARENT    \
-                           icon.color=$ICON_COLOR                     \
-                           label.color=$LABEL_COLOR
+    sketchybar --animate tanh 20 \
+      --set space.$PREV_SID background.color=$TRANSPARENT \
+      icon.color=$ICON_COLOR \
+      label.color=$LABEL_COLOR
   elif [[ "$SID" == "$CURRENT_SID" ]]; then
-    sketchybar --animate tanh 20                                      \
-               --set space.$CURRENT_SID background.color=$SPACE_COLOR \
-                           icon.color=$BAR_COLOR                      \
-                           label.color=$BAR_COLOR
+    sketchybar --animate tanh 20 \
+      --set space.$CURRENT_SID background.color=$SPACE_COLOR \
+      icon.color=$BAR_COLOR \
+      label.color=$BAR_COLOR
   fi
   # debug "update_colors"
 }
@@ -31,9 +31,9 @@ update_label() {
     else
       LABEL_DRAWING="on"
     fi
-    sketchybar --animate tanh 20                                          \
-               --set space.$CURRENT_SID label.drawing=$LABEL_DRAWING      \
-                                        label="$FOCUSED_APP"
+    sketchybar --animate tanh 20 \
+      --set space.$CURRENT_SID label.drawing=$LABEL_DRAWING \
+      label="$FOCUSED_APP"
     # debug "update_label"
   fi
 }
@@ -57,7 +57,7 @@ mouse_clicked() {
       fi
     fi
   elif [[ "$MODIFIER" == "cmd" ]]; then
-    ~/.config/yabai/cycle_windows.sh
+    yabai -m space --focus next || yabai -m space --focus 1
   else
     yabai -m space --focus $SID
   fi
@@ -85,3 +85,4 @@ case "$SENDER" in
   mouse_clicked
   ;;
 esac
+

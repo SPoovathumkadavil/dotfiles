@@ -2,11 +2,11 @@
 
 case "$1" in
 dmenu)
-  dir=$(ls ~/.wallpapers | dmenu-mac)
+  dir=$(ls ~/.wallpapers | choose)
   wal -i ~/.wallpapers/$dir
   ;;
 *)
-  dir=$(find ~/.wallpapers -depth 1 | fzf)
-  wal -i $dir
+  dir=$(ls ~/.wallpapers | fzf)
+  wal -i ~/.wallpapers/$dir
   ;;
 esac

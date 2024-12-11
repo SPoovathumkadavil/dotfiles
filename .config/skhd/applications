@@ -6,5 +6,4 @@ alt - s : alacritty -e spt
 alt - e : alacritty -e yazi ~/
 alt - m : open -a Mail
 alt - p : wallpaper dmenu
-cmd - space : dmenu-mac
 shift + ctrl - escape : wezterm start -- btop

@@ -10,7 +10,7 @@ POPUP_CLICK_SCRIPT="sketchybar --set \$NAME popup.drawing=toggle"
 POPUP_OFF="sketchybar --set \$NAME popup.drawing=off"
 
 # Unload the macOS on screen indicator overlay for volume change
-launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
+launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist >/dev/null 2>&1 &
 
 sketchybar --bar "${bar[@]}" --default "${item_defaults[@]}"
 
@@ -43,23 +43,22 @@ source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/spacer.sh" 1 right
 
 sketchybar --add alias "Tomito,TomitoMenuBarItem" right \
-           --rename "Tomito,TomitoMenuBarItem" pomodoro \
-           --set pomodoro click_script="open -a /Applications/Tomito.app"
+  --rename "Tomito,TomitoMenuBarItem" pomodoro \
+  --set pomodoro click_script="open -a /Applications/Tomito.app"
 
 source "$ITEM_DIR/transmission.sh"
 
 source "$ITEM_DIR/music.sh"
 
-
 # Brackets '/space\..*/'
-sketchybar --add bracket left.side '/space\..*/'                                              \
-           --set left.side "${bracket_defaults[@]}"                                           \
-                                                                                              \
-           --add bracket notifications spacer.1 weather reminders messages brew mail spacer.2                   \
-           --set notifications "${bracket_defaults[@]}"                                       \
-                                                                                              \
-           --add bracket status_icons diskmonitor volume_icon volume battery wifi dnd control_center \
-           --set status_icons "${bracket_defaults[@]}" background.color=$TRANSPARENT
+sketchybar --add bracket left.side '/space\..*/' \
+  --set left.side "${bracket_defaults[@]}" \
+  \
+  --add bracket notifications spacer.1 weather reminders messages brew mail spacer.2 \
+  --set notifications "${bracket_defaults[@]}" \
+  \
+  --add bracket status_icons diskmonitor volume_icon volume battery wifi dnd control_center \
+  --set status_icons "${bracket_defaults[@]}" background.color=$TRANSPARENT
 
 sketchybar --hotload on
 sketchybar --update
