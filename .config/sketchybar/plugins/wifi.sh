@@ -3,8 +3,8 @@
 # Loads defined colors
 source "$CONFIG_DIR/colors.sh"
 
-IS_VPN=$(/usr/local/bin/piactl get connectionstate)
-# IS_VPN="Disconnected"
+# IS_VPN=$(/usr/local/bin/piactl get connectionstate)
+IS_VPN="Disconnected"
 # CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
 CURRENT_WIFI="$(ipconfig getsummary en0)"
 # IP_ADDRESS="$(ipconfig getifaddr en0)"
@@ -45,7 +45,7 @@ render_popup() {
     args=(
       --set wifi.ssid label="Not connected"
       --set wifi.ipaddress label="No IP"
-      )
+    )
   fi
 
   sketchybar "${args[@]}" >/dev/null
@@ -68,3 +68,4 @@ case "$SENDER" in
   popup toggle
   ;;
 esac
+

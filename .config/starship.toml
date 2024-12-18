@@ -6,8 +6,7 @@
 #[└─](bold black)$character"""
 
 format = """
-(bold blue)$time$username$directory$git_branch$git_status$go$python$cmd_duration
-(bold blue)$character"""
+(bold blue)$username$directory$git_branch$git_status$go$python(bold blue)$character"""
 
 
 

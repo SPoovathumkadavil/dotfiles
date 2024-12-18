@@ -6,12 +6,12 @@ CURRENTARTIST="$(echo "$INFO" | jq -r '.artist')"
 CURRENTSONG="$(echo "$INFO" | jq -r '.title')"
 
 if [[ "$PLAYER" = "Music" || "$PLAYER" = "Spotify" ]]; then
-  ARGS=(drawing=on)
+  ARGS=(drawing=on label.drawing=on icon.padding_right=20 icon="" background.drawing=on)
   if [[ "$PLAYERSTATE" = "playing" ]]; then
-    ARGS+=(label="$CURRENTARTIST: $CURRENTSONG" background.image=media.artwork)
+    ARGS+=(label="$CURRENTARTIST :- $CURRENTSONG" background.image=media.artwork)
   fi
 else
-  ARGS=(drawing=off)
+  ARGS=(icon="" label.drawing=off icon.padding_right=3 background.drawing=off)
 fi
 
 sketchybar --set $NAME "${ARGS[@]}"

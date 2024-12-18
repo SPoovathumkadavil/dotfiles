@@ -42,13 +42,11 @@ source "$ITEM_DIR/reminders.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/spacer.sh" 1 right
 
+source "$ITEM_DIR/music.sh"
+
 sketchybar --add alias "Tomito,TomitoMenuBarItem" right \
   --rename "Tomito,TomitoMenuBarItem" pomodoro \
   --set pomodoro click_script="open -a /Applications/Tomito.app"
-
-source "$ITEM_DIR/transmission.sh"
-
-source "$ITEM_DIR/music.sh"
 
 # Brackets '/space\..*/'
 sketchybar --add bracket left.side '/space\..*/' \

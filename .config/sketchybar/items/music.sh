@@ -4,8 +4,8 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 music=(
-  background.border_color="$(getcolor grey 50)"
-  background.border_width=1
+  # background.border_color="$(getcolor grey 50)"
+  # background.border_width=1
   background.color=$TRANSPARENT
   background.image.corner_radius=4
   background.image.scale=0.6
@@ -13,7 +13,7 @@ music=(
   label.max_chars=24
   label.padding_right=$PADDINGS
   label.scroll_duration=100
-  padding_right=$PADDINGS
+  padding_right=10 #$PADDINGS
   script="$PLUGIN_DIR/music.sh"
   click_script="$PLUGIN_DIR/music.sh"
   updates=on

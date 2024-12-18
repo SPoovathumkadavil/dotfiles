@@ -3,24 +3,48 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-COUNT=$(( $(reminders show-all --due-date today | grep -E "^[a-zA-Z &]+: \d{1,2}: " | wc -l) + 0 ))
+update() {
+  DRAWING="on"
 
-DRAWING="on"
+  COUNT=$(($(reminders show-all --due-date today | grep -E "^[a-zA-Z &]+: \d{1,2}: " | wc -l) + 0))
 
-case "$COUNT" in
-[7-9]|[1-9][0-9])
-  COLOR=$(getcolor red)
+  case "$COUNT" in
+  [7-9] | [1-9][0-9])
+    COLOR=$(getcolor red)
+    ;;
+  [3-6])
+    COLOR=$(getcolor orange)
+    ;;
+  [1-2])
+    COLOR=$(getcolor yellow)
+    ;;
+  0 | "")
+    COLOR=$LABEL_COLOR
+    DRAWING="off"
+    ;;
+  esac
+
+  pop_label=$(reminders show-all --due-date today)
+
+  sketchybar --animate tanh 20 --set $NAME label.drawing=$DRAWING label=$COUNT icon.color=$COLOR
+}
+
+echo "$pop_label"
+
+popup() {
+  update
+  sketchybar --set reminders.details label="$pop_label" \
+    --set "$NAME" popup.drawing="$1"
+}
+
+case "$SENDER" in
+"routine" | "forced")
+  update
   ;;
-[3-6])
-  COLOR=$(getcolor orange)
+"mouse.entered")
+  popup on
   ;;
-[1-2])
-  COLOR=$(getcolor yellow)
-  ;;
-0|"")
-  COLOR=$LABEL_COLOR
-  DRAWING="off"
+"mouse.exited" | "mouse.exited.global")
+  popup off
   ;;
 esac
-
-sketchybar --animate tanh 20 --set $NAME label.drawing=$DRAWING label=$COUNT icon.color=$COLOR

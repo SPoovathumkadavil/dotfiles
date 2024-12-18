@@ -11,7 +11,7 @@ FONT="JetBrainsMono Nerd Font"
 
 # Bar Appearance
 bar=(
-  color=$BAR_COLOR
+  # color=$BAR_COLOR
   position=top
   topmost=off
   sticky=on
@@ -19,8 +19,10 @@ bar=(
   padding_left=4
   padding_right=4
   corner_radius=0
-  blur_radius=0
+  # blur_radius=0
   notch_width=170
+  blur_radius=30
+  color=0x40000000
 )
 
 # Item Defaults
