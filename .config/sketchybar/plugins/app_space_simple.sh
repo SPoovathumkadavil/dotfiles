@@ -9,6 +9,8 @@ PREV_SID=$(yabai -m query --spaces --space recent | jq -r '.index')
 CURRENT_SID=$(yabai -m query --spaces index --space | jq -r '.index')
 FOCUSED_APP=$(yabai -m query --windows app --window | jq -r '.app')
 
+echo "called"
+
 update_colors() {
   if [[ "$SID" == "$PREV_SID" ]]; then
     sketchybar --animate tanh 20 \
@@ -85,4 +87,3 @@ case "$SENDER" in
   mouse_clicked
   ;;
 esac
-

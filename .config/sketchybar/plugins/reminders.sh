@@ -24,7 +24,7 @@ update() {
     ;;
   esac
 
-  pop_label=$(reminders show-all --due-date today)
+  # pop_label=$(reminders show-all --due-date today)
 
   sketchybar --animate tanh 20 --set $NAME label.drawing=$DRAWING label=$COUNT icon.color=$COLOR
 }
@@ -41,10 +41,10 @@ case "$SENDER" in
 "routine" | "forced")
   update
   ;;
-"mouse.entered")
-  popup on
-  ;;
-"mouse.exited" | "mouse.exited.global")
-  popup off
-  ;;
+# "mouse.entered")
+#   popup on
+#   ;;
+# "mouse.exited" | "mouse.exited.global")
+#   popup off
+#   ;;
 esac
